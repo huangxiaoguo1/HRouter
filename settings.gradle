@@ -1,1 +1,1 @@
-include ':app', ':module_login', ':module_member', ':lib_hrouter', ':hrouter_complier', ':hrouter_annotations'
+include ':app', ':module_login', ':module_member', ':lib_hrouter', ':hrouter-complier', ':hrouter_annotations'
