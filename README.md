@@ -4,7 +4,8 @@
 
     最新版本1.0.3
 
-```
+
+```html
 allprojects {
 
     repositories {
@@ -38,7 +39,7 @@ dependencies {
 ##  添加导航注解
 
 
-```
+```text
 @Route("login/login")
 public class LoginActivity extends AppCompatActivity {
     ...
@@ -53,13 +54,13 @@ public class BlankFragment extends Fragment {
 
 ##  跳转Activity
 
-```
+```groovy
 Router.getInstance().build("member/member").navigation();
 ```
 
 ## 跳转Activity并传参
 
-```java
+```groovy
 HRouter.getInstance()
        .build("login/login")
        .withString("login", "我是测试带过来的数据")
@@ -72,7 +73,7 @@ HRouter.getInstance()
 ## 跳转Activity并返回
 
 
-```java
+```groovy
  HRouter.getInstance()
                 .build("login/login")
                 .navigation(this, 666);
