@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion project.COMPILER_SDK_VERSION as int
-    buildToolsVersion  project.BUILD_TOOLS_VERSION
+    compileSdkVersion 29
+    buildToolsVersion  "29.0.2"
     defaultConfig {
         applicationId "com.hxg.hrouter"
-        minSdkVersion project.MIN_SDK_VERSION as int
-        targetSdkVersion project.TAR_SDK_VERSION as int
-        versionCode project.VERSION_CODE as int
-        versionName project.VERSION_NAME
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {

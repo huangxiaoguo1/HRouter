@@ -6,14 +6,14 @@ if (!isNeedLoginModule.toBoolean()) {
 
 
 android {
-    compileSdkVersion project.COMPILER_SDK_VERSION as int
-    buildToolsVersion  project.BUILD_TOOLS_VERSION
+    compileSdkVersion 29
+    buildToolsVersion  "29.0.2"
     defaultConfig {
         if (!isNeedLoginModule .toBoolean()) {
             applicationId "com.hxg.module_login"
         }
-        minSdkVersion project.MIN_SDK_VERSION as int
-        targetSdkVersion project.TAR_SDK_VERSION as int
+        minSdkVersion 16
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
