@@ -17,9 +17,36 @@ android {
         }
     }
     buildTypes {
-        release {
-            minifyEnabled false
+        debug {
+            minifyEnabled true
+            // Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            // Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    //签名
+    signingConfigs {
+        debug {
+            storeFile file("../houter.jks")
+            storePassword "fuyao123"
+            keyAlias "fuyao"
+            keyPassword "fuyao123"
+        }
+        release {
+            storeFile file("../houter.jks")
+            storePassword "fuyao123"
+            keyAlias "fuyao"
+            keyPassword "fuyao123"
         }
     }
 }
@@ -33,7 +60,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation project(path: ':module_login')
     implementation project(path: ':module_member')
-    annotationProcessor project(path: ':hrouter-complier')
-//    implementation 'com.github.huangxiaoguo1:HRouter:1.0.2'
-//    annotationProcessor 'com.github.huangxiaoguo1.HRouter:hrouter_complier:1.0.2'
+//    annotationProcessor project(path: ':hrouter-complier')
+    implementation 'com.github.huangxiaoguo1:HRouter:1.0.3'
+    annotationProcessor 'com.github.huangxiaoguo1.HRouter:hrouter-complier:1.0.3'
 }

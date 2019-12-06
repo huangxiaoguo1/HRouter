@@ -7,11 +7,10 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import com.hxg.hrouter_annotations.Route;
 import com.hxg.lib_hrouter.HRouter;
-import com.hxg.module_login.FragmentManagerHelper;
+import com.hxg.module_login.bean.LoginTest;
 
 @Route("main/main")
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
                 .build("login/login")
                 .withString("login", "我是测试带过来的数据")
                 .withInt("login1", 321)
+                .withObject("object", new LoginTest("huangxiaoguo", 18))
                 .navigation(this, 666);
     }
 

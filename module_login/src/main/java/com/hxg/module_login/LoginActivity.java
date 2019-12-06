@@ -22,9 +22,10 @@ public class LoginActivity extends AppCompatActivity {
         TextView tvText = findViewById(R.id.tv_text);
         String login_text = getIntent().getStringExtra("login");
         int login_int = getIntent().getIntExtra("login1", 0);
+        String object = getIntent().getStringExtra("object");
         if (login_text != null) {
             Log.i("huangxiaoguo", login_text);
-            tvText.setText(login_text + "," + login_int);
+            tvText.setText(login_text + "," + login_int + "," + object);
         }
         mFragmentManagerHelper = new FragmentManagerHelper(getSupportFragmentManager(), R.id.fl_main);
         Fragment fragment = (Fragment) HRouter.getInstance().build("member/blankfragment").navigation();
