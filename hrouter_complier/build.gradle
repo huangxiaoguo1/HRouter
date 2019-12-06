@@ -1,0 +1,19 @@
+apply plugin: 'java-library'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.huangxiaoguo1'// huangxiaoguo1代表你github名字
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // AS-3.4.1 + geadles5.1.1-all+ auto-service:1.0-rc6
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
+    compileOnly 'com.google.auto.service:auto-service:1.0-rc6'
+    //3.4及其以下
+    //implementation 'com.google.auto.service:auto-service:1.0-rc6'
+
+    implementation project(path: ':hrouter_annotations')
+}
+//中文乱码问题（错误：编码GBK不可映射字符）
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+sourceCompatibility = "7"
+targetCompatibility = "7"

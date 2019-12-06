@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hxg.lib_hrouter">
+
+    <application>
+        <provider
+            android:name=".contextprovider.HRouterAppContentProvider"
+            android:authorities="${applicationId}.HRouterAppContentProvider"
+            android:exported="false" />
+    </application>
+</manifest>
