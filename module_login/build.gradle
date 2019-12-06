@@ -1,17 +1,8 @@
-if (!isNeedLoginModule.toBoolean()) {
-    apply plugin: 'com.android.application'
-} else {
-    apply plugin: 'com.android.library'
-}
-
-
+apply plugin: 'com.android.library'
 android {
     compileSdkVersion 29
-    buildToolsVersion  "29.0.2"
+    buildToolsVersion "29.0.2"
     defaultConfig {
-        if (!isNeedLoginModule .toBoolean()) {
-            applicationId "com.hxg.module_login"
-        }
         minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
@@ -31,17 +22,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    sourceSets{
+    sourceSets {
         main {
-            if (!isNeedLoginModule.toBoolean()) {
-                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
-            } else {
-                manifest.srcFile 'src/main/release/AndroidManifest.xml'
-                java {
-                    //全部Module一起编译的时候剔除debug目录
-                    exclude '**/debug/**'
-                }
-            }
+            manifest.srcFile 'src/main/release/AndroidManifest.xml'
         }
     }
 }
@@ -56,5 +39,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     api project(path: ':lib_hrouter')
     api project(path: ':hrouter_annotations')
-    annotationProcessor  project(path: ':hrouter_complier')
+    annotationProcessor project(path: ':hrouter_complier')
 }

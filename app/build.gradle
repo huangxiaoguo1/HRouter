@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion  "29.0.2"
+    buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.hxg.hrouter"
         minSdkVersion 16
@@ -31,11 +31,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    if (isNeedLoginModule.toBoolean()) {
-        implementation project(path: ':module_login')
-    }
-    if (isNeedMemberModule.toBoolean()) {
-        implementation project(path: ':module_member')
-    }
-    annotationProcessor  project(path: ':hrouter_complier')
+    implementation project(path: ':module_login')
+    implementation project(path: ':module_member')
+    annotationProcessor project(path: ':hrouter_complier')
 }
