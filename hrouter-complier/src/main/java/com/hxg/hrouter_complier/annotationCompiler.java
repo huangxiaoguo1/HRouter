@@ -34,7 +34,7 @@ public class annotationCompiler extends BaseProcessor {
         //得到写代码的类
         try {
             if (null==moduleName){
-                throw new RuntimeException("build.gradle中未完成配置AROUTER_MODULE_NAME，请查看您module中build.gradle的配置");
+                moduleName=String.valueOf(System.currentTimeMillis());
             }
             utilName = "HRouter$$Processor$$" + moduleName;
             writer = filer.createSourceFile("com.hxg.android.hrouter.routes." + utilName).openWriter();
