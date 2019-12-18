@@ -37,9 +37,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-//    api project(path: ':lib_hrouter')
-//    api project(path: ':hrouter_annotations')
-//    annotationProcessor project(path: ':hrouter-complier')
-    implementation 'com.github.huangxiaoguo1:HRouter:1.0.3'
-    annotationProcessor 'com.github.huangxiaoguo1.HRouter:hrouter-complier:1.0.3'
+    api project(path: ':lib_hrouter')
+    api project(path: ':hrouter_annotations')
+    annotationProcessor project(path: ':hrouter-complier')
+//    implementation 'com.github.huangxiaoguo1:HRouter:1.0.3'
+//    annotationProcessor 'com.github.huangxiaoguo1.HRouter:hrouter-complier:1.0.3'
 }

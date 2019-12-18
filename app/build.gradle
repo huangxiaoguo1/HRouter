@@ -60,7 +60,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation project(path: ':module_login')
     implementation project(path: ':module_member')
-//    annotationProcessor project(path: ':hrouter-complier')
-    implementation 'com.github.huangxiaoguo1:HRouter:1.0.3'
-    annotationProcessor 'com.github.huangxiaoguo1.HRouter:hrouter-complier:1.0.3'
+    annotationProcessor project(path: ':hrouter-complier')
+//    implementation 'com.github.huangxiaoguo1:HRouter:1.0.3'
+//    annotationProcessor 'com.github.huangxiaoguo1.HRouter:hrouter-complier:1.0.3'
 }
