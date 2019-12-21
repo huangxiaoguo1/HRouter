@@ -70,8 +70,10 @@ public abstract class BaseProcessor extends AbstractProcessor {
     protected boolean isFragment(TypeElement typeElement) {
         TypeMirror fragmentTm = elementUtils.getTypeElement(Consts.FRAGMENT).asType();
         TypeMirror fragmentTmV4 = elementUtils.getTypeElement(Consts.FRAGMENT_V4).asType();
+        TypeMirror fragmentTmX = elementUtils.getTypeElement(Consts.FRAGMENT_X).asType();
         if (types.isSubtype(typeElement.asType(), fragmentTm)
-                || types.isSubtype(typeElement.asType(), fragmentTmV4)) {
+                || types.isSubtype(typeElement.asType(), fragmentTmV4)
+                || types.isSubtype(typeElement.asType(), fragmentTmX)) {
             return true;
         }
         return false;
